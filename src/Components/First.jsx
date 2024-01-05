@@ -1,10 +1,11 @@
 import React from 'react'
 import Secon from './Secon'
 
-function First() {
+function First(props) {
   return (
-    <div>
+    <div className='App'>
         <h1>First</h1>
+        <h2>x::{props.x}</h2>
          <Secon/>
     </div>
   )

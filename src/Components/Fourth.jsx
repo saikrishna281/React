@@ -1,9 +1,12 @@
-import React from 'react'
 
+import { useContext } from 'react'
+import MyContext from './Context'
 function Fourth() {
+  var y=useContext(MyContext)
   return (
-    <div>
+    <div className='App'>
       <h1>Fourth</h1>
+      <h3>{y}</h3>
     </div>
   )
 }

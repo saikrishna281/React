@@ -3,7 +3,7 @@ import Third from './Third'
 
 function Secon() {
   return (
-    <div>
+    <div className='App'>
         <h1>second</h1>
         <Third/>
     </div>
