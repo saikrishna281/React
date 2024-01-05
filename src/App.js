@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Counter from './Components/counter/Counter';
+import Todolist from './Components/todolist/Todolist';
 
 function App() {
   return (
     <div className="App">
-     <h1>Hello World</h1>
+     <Counter/>
+     <Todolist/>
     </div>
   );
 }
