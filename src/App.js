@@ -9,7 +9,9 @@ function App() {
   return (
     <MyContext.Provider value={x}>
     <div className="App">
+    <button onClick={()=>{setX(x+1)}}>Increment</button>
      <First x={x}/>
+     
     </div>
     </MyContext.Provider>
   );

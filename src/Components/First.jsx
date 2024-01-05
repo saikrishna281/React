@@ -6,6 +6,7 @@ function First(props) {
     <div className='App'>
         <h1>First</h1>
         <h2>x::{props.x}</h2>
+       
          <Secon/>
     </div>
   )
