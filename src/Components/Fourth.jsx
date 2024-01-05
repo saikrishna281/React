@@ -6,7 +6,7 @@ function Fourth() {
   return (
     <div className='App'>
       <h1>Fourth</h1>
-      <h3>{y}</h3>
+      <h3>x::{y}</h3>
     </div>
   )
 }
