@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 function Formvalidation() {
   const [array,setArray]=useState([])
+  const [index,setIndex]=useState()
   const [isflag,setIsflag]=useState(false)
   const [inputdata,setInputdata]=useState([
     {
@@ -10,6 +11,7 @@ function Formvalidation() {
       location:''
     }
   ])
+  let {name,email,contact,location}=inputdata;
   const handlesubmit=(e)=>{
     e.preventDefault()
   }
@@ -18,7 +20,7 @@ function Formvalidation() {
   }
 
   const adddata=()=>{
-   setArray([...array,inputdata])
+   setArray([...array,{name,email,contact,location}])
     setInputdata({
       name:'',
       email:'',
@@ -35,10 +37,11 @@ function Formvalidation() {
   const {name,email,contact,location}=array[i];
   setInputdata({name,email,contact,location})
   setIsflag(true)
+  setIndex(i)
   }
   function updateinfo(i){
 const total=[...array];
-total.splice(i,1,inputdata)
+total.splice(index,1,{name,email,contact,location})
 setArray(total);
 setIsflag(false);
 setInputdata({
