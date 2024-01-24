@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Validation from './Compoents/Validation';
 function App() {
   return (
     <div className="App">
-     <h1>Hello World</h1>
+     <Validation/>
     </div>
   );
 }
