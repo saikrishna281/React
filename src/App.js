@@ -1,9 +1,10 @@
 import './App.css';
-import Validation from './Compoents/Validation';
+import Table from './Compoents/Table';
+
 function App() {
   return (
     <div className="App">
-     <Validation/>
+   <Table/>
     </div>
   );
 }
