@@ -10,7 +10,7 @@ function Table() {
             contact: ''
         }
     ])
-    [{firname,lastname,email,gender,contact}]=newdata;
+
     const [data, setData] = useState([])
     const handlesubmit = e => {
         e.preventDefault()
@@ -21,7 +21,7 @@ function Table() {
     }
     const addstudent = () => {
         setData([...data, student])
-        setData(newdata)
+       
     }
     return (
         <div>
