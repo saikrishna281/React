@@ -33,7 +33,7 @@ function Formvalidation() {
    newdata.splice(i,1);
    setArray(newdata)
   }
-  function updating(i){
+  function editing(i){
   const {name,email,contact,location}=array[i];
   setInputdata({name,email,contact,location})
   setIsflag(true)
@@ -78,7 +78,7 @@ setInputdata({
                     <td>{item.email}</td>
                     <td>{item.contact}</td>
                     <td>{item.location}</td>
-                    <td><button onClick={()=>{updating(i)}}>Edit</button></td>
+                    <td><button onClick={()=>{editing(i)}}>Edit</button></td>
                     <td><button onClick={()=>{deletebtn(i)}}>Delete</button></td>
                   </tr>
                 )
