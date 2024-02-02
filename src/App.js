@@ -1,8 +1,11 @@
 import React from 'react'
+import Details from './Compenents/Details'
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <Details/>
+    </div>
   )
 }
 
