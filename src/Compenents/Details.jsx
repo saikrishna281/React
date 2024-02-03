@@ -3,29 +3,34 @@ import {useFormik} from 'formik'
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
-    firstName: Yup.string()
-      .min(2, 'Too Short!')
+    firstname: Yup.string()
+      .min(4, 'Too Short!')
       .max(50, 'Too Long!')
-      .required('Required'),
-    lastName: Yup.string()
-      .min(2, 'Too Short!')
+      .required('Please Enter Your FirstName'),
+    lastname: Yup.string()
+      .min(4, 'Too Short!')
       .max(50, 'Too Long!')
-      .required('Required'),
-    email: Yup.string().email('Invalid email').required('Required'),
+      .required('Please Enter Your LastName'),
+    email: Yup.string().email('Invalid email').required('Please Enter Your Email'),
+    password: Yup.string().required('Password is required'),
+    confirmpassword: Yup.string()
+     .oneOf([Yup.ref('password'), null], 'Passwords must match')
   });
 function Details() {
     const [data,setData]=useState([])
-   const {handleSubmit,handleBlur,handleChange}= useFormik({
+   const {handleSubmit,handleBlur,handleChange,errors}= useFormik({
         initialValues:{
             firstname:'',
             lastname:'',
-            email:''
+            email:'',
+            password:'',
+            confirmpassword:''
         },
         onSubmit:(values)=>{
          setData([...data,values])
          
         },
-        validationSchema:{SignupSchema}
+        validationSchema:SignupSchema
     })
     return (
         <div>
@@ -38,7 +43,7 @@ function Details() {
                     
                 />
                 <br />
-                {}
+                {errors.firstname && <small >{errors.firstname}</small>}<br/>
                 <input
                     type="text"
                     name='lastname'
@@ -47,6 +52,7 @@ function Details() {
                    
                 />
                 <br />
+                {errors.lastname && <small >{errors.lastname}</small>}<br/>
                 <input
                     type="text"
                     name='email'
@@ -55,6 +61,25 @@ function Details() {
                     
                 />
                 <br />
+                {errors.email && <small >{errors.email}</small>}<br/>
+                <input
+                    type="password"
+                    name='password'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    
+                />
+                <br />
+                {errors.password && <small >{errors.password}</small>}<br/>
+                <input
+                    type="password"
+                    name='confirmpassword'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    
+                />
+                <br />
+                {errors.confirmpassword && <small >{errors.confirmpassword}</small>}<br/>
                 <button>submit</button>
             </form>
             {

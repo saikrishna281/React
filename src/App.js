@@ -1,10 +1,11 @@
 import React from 'react'
 import Details from './Compenents/Details'
 
+
 function App() {
   return (
     <div>
-      <Details/>
+     <Details/>
     </div>
   )
 }
