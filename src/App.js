@@ -1,8 +1,13 @@
 import React from 'react'
+import Boxes from './Components/Boxes'
 
-function App() {
-  return (
-    <div>App</div>
+
+
+const App=()=>{
+  return(
+    <div>
+     <Boxes/>
+    </div>
   )
 }
 
